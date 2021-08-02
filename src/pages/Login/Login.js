@@ -1,11 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import './Nav.scss';
+import './Login.scss';
 
-class Nav extends React.Component {
+class Login extends React.Component {
   render() {
     return <></>;
   }
 }
 
-export default Nav;
+export default Login;
