@@ -4,7 +4,7 @@ import './Login.scss';
 
 class Login extends React.Component {
   render() {
-    return <></>;
+    return <div>가영</div>;
   }
 }
 
