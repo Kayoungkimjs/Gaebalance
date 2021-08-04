@@ -1,0 +1,19 @@
+.searchWrap {
+  .searchFilter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    border-bottom: 2px solid #da435d;
+
+    button {
+      // margin-right: 50px;
+      width: 200px;
+      height: 30px;
+      padding: 17px 0 16px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+* {
+  font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
+}
+
+html,
+body {
+  font-family: 'Noto Sans', 'Noto Sans KR', sans-serif;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin icon {
+  width: 24px;
+  height: 24px;
+}
+
+@mixin productImage {
+  width: 200px;
+  height: 200px;
+}
+
+.productListWrap {
+  width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 25px;
+    color: #121212;
+  }
+
+  button {
+    display: block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  input {
+    border: none;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  p,
+  strong {
+    font-size: 14px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+.category {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 54px 0 5px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.dropdownFilter {
+  display: flex;
+  justify-content: flex-end;
+
+  .displayOptions {
+    display: block;
+    width: 15%;
+    height: 45px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 0 30px 0 15px;
+    border: 1px solid #bdbdbd;
+    border-radius: 1px;
+  }
+}
+
+.productCardWrap {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+main .productCard {
+  width: 240px;
+  padding: 20px 20px 35px;
+  display: block;
+
+  .productImage {
+    @include productImage;
+    margin-bottom: 30px;
+  }
+
+  .starRating img {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 10px;
+  }
+
+  .cardDesc {
+    text-align: left;
+
+    strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .bestTag {
+      margin-bottom: 5px;
+    }
+  }
+}

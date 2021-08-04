@@ -1,0 +1,41 @@
+@mixin productImage {
+  width: 200px;
+  height: 200px;
+}
+
+.productCardWrap {
+  display: flex;
+  justify-content: column;
+  margin: 0 auto;
+
+  .productCardGroup {
+    width: 240px;
+    padding: 20px 20px 35px;
+    display: block;
+
+    .productImage {
+      @include productImage;
+      margin-bottom: 30px;
+    }
+
+    .cardDesc {
+      text-align: left;
+
+      strong {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .starRating img {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 10px;
+      }
+
+      .bestTag {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
