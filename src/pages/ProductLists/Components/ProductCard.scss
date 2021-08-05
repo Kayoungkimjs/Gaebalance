@@ -4,13 +4,16 @@
 }
 
 .productCardWrap {
+  margin-right: 30px;
+  max-width: 1200px;
   display: flex;
-  justify-content: column;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 
   .productCardGroup {
     width: 240px;
-    padding: 20px 20px 35px;
+    padding: 30px;
     display: block;
 
     .productImage {
@@ -26,7 +29,6 @@
         font-weight: 700;
         margin-bottom: 15px;
       }
-
       .starRating img {
         width: 15px;
         height: 15px;

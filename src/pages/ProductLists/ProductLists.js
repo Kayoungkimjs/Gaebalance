@@ -8,9 +8,23 @@ class ProductLists extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      productBox: [],
+    };
   }
+
+  componentDidMount() {
+    fetch('http://10.58.2.75:8000/product?price=1&price=2')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          productBox: data.response,
+        });
+      });
+  }
+
   render() {
+    console.log(this.state.productBox);
     return (
       <div className="productListWrap">
         <header>
@@ -26,7 +40,18 @@ class ProductLists extends React.Component {
             </select>
           </div>
         </header>
-        <ProductCard />
+        <div className="productCardWrap">
+          {this.state.productBox.map(product => {
+            return (
+              <ProductCard
+                key={product.id}
+                image={product.image_url}
+                name={product.name}
+                price={product.price}
+              />
+            );
+          })}
+        </div>
         <div className="showmore">
           <button type="button">더 보기 (30)</button>
           <img alt="Category icon" src="./images/kayoung/icon/ic-bottom.png" />
