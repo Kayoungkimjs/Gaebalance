@@ -1,0 +1,48 @@
+.category_box {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  padding: 30px 0 25px;
+  background: red;
+  .inner {
+    width: 1200px;
+    margin: 0 auto;
+    .depth {
+      width: 150px;
+      float: left;
+      &:first-child {
+        width: 125px;
+        margin-right: 40px;
+        .tit {
+          margin-left: 0;
+        }
+        ul {
+          border-left: 0;
+          padding-left: 0;
+          // border-right: 1px solid #e3e3e3;
+        }
+      }
+      .tit {
+        display: block;
+        height: 16px;
+        margin: 0 0 15px 0;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      ul {
+        height: 320px;
+        margin-bottom: 2px;
+        li {
+          padding-bottom: 11px;
+          a {
+            color: #141414;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+}
