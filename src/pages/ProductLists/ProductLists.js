@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { API } from './config.js';
 import SearchFilter from './Components/SearchFilter';
 import ProductCard from './Components/ProductCard';
 import Dropdown from './Components/Dropdown';
@@ -16,7 +17,7 @@ class ProductLists extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.58:8000/products')
+    fetch(`${API.PRODUCT}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -26,34 +27,33 @@ class ProductLists extends React.Component {
   }
 
   handleFilter = e => {
-    console.log('안뇽');
     this.setState({ value: e.target.value });
     //전체보기
-    fetch('http://10.58.0.58:8000/products')
+    fetch(`${API.PRODUCT}`)
       .then(response => response.json())
       .then(data => {
         this.setState({ productBox: data.response });
       });
     //신상품순
-    fetch('http://10.58.0.58:8000/products?sort=manufacture_date')
+    fetch(`${API.PRODUCT}?sort=manufacture_date`)
       .then(response => response.json())
       .then(data => {
         this.setState({ productBox: data.response });
       });
     //인기순
-    fetch('http://10.58.0.58:8000/products?sort=stock')
+    fetch(`${API.PRODUCT}?sort=stock`)
       .then(response => response.json())
       .then(data => {
         this.setState({ productBox: data.response });
       });
     //낮은 가격순
-    fetch('http://10.58.0.58:8000/products?sort=-price')
+    fetch(`${API.PRODUCT}?sort=-price`)
       .then(response => response.json())
       .then(data => {
         this.setState({ productBox: data.response });
       });
     //높은 가격순
-    fetch('http://10.58.0.58:8000/products?sort=price')
+    fetch(`${API.PRODUCT}?sort=price`)
       .then(response => response.json())
       .then(data => {
         this.setState({ productBox: data.response });
@@ -73,7 +73,7 @@ class ProductLists extends React.Component {
     return (
       <div className="productListWrap">
         <h1 className="category">비치웨어</h1>
-        {/* <SearchFilter onChange={this.state.handleChange} /> */}
+        <SearchFilter />
         <Dropdown handleFilter={this.handleFilter} />
         <div className="productCardWrap">
           {this.state.productBox.map(product => {

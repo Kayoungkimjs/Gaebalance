@@ -67,7 +67,7 @@ export const FILTER2 = [
   },
 
   {
-    id: color10,
+    id: color10, //백엔드 확인
     content: 'Gray',
   },
 ];
