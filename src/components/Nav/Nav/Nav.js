@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import Category from 'Category';
+import Category from './Category';
 import './Nav.scss';
 
 class Nav extends React.Component {
