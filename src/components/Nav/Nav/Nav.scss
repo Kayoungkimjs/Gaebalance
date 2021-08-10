@@ -1,39 +1,42 @@
 * {
-  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
 }
-header {
+
+.navHead {
   position: relative;
   width: 100%;
   height: 110px;
   z-index: 50;
   left: 0;
   top: 0;
-  // border: 1px solid black;
-  .top_menu {
+
+  .topMenu {
     width: 100%;
     height: 40px;
-    //   border: 1px solid black;
     background: #e5e5e5;
+
     .inner {
       width: 1200px;
       margin: 0 auto;
+
       .mynb {
         display: block;
         float: left;
         margin-top: 14px;
       }
+
       .made {
         display: inline-block;
-        margin-top: 12px;
-        margin-left: 20px;
+        margin: 12px 0 0 20px;
         border-left: 1px solid #ccc;
         padding-left: 20px;
       }
+
       .clearfix {
         float: right;
         padding-top: 11px;
+
         li {
           float: left;
           height: 18px;
@@ -46,15 +49,19 @@ header {
       }
     }
   }
+
   .gnb {
     position: relative;
     background: #fff;
+
     .inner {
       width: 1200px;
       margin: 0 auto;
+
       .logo {
         float: left;
         padding-top: 19px;
+
         a {
           display: block;
           width: 100px;
@@ -64,11 +71,14 @@ header {
           overflow: hidden;
         }
       }
+
       .menu {
         float: left;
         margin-left: 38px;
+
         .nav {
           float: left;
+
           a {
             display: inline-block;
             height: 70px;
@@ -90,9 +100,11 @@ header {
       .customer {
         float: right;
         margin-top: -90px;
-        .top_search {
+
+        .topSearch {
           float: left;
           padding-top: 7px;
+
           a {
             display: block;
             width: 28px;
@@ -107,6 +119,7 @@ header {
           float: left;
           padding-top: 5px;
           margin-left: 30px;
+
           &::before {
             content: '';
             display: inline-block;
@@ -117,6 +130,7 @@ header {
               no-repeat -50px -6px;
             vertical-align: top;
           }
+
           .hidden {
             display: inline-block;
             padding-top: 9px;
@@ -125,6 +139,7 @@ header {
             text-indent: -999em;
             overflow: hidden;
           }
+
           .log {
             display: inline-block;
             padding-top: 9px;
@@ -135,6 +150,7 @@ header {
             color: #141414;
             font-weight: 400;
           }
+
           .join {
             display: inline-block;
             padding-top: 9px;
@@ -144,6 +160,7 @@ header {
             color: #141414;
             font-weight: 400;
             margin-left: 12px;
+
             &::before {
               content: '';
               position: relative;
@@ -156,9 +173,11 @@ header {
             }
           }
         }
+
         .cart {
           float: left;
           margin-left: 29px;
+
           .shop {
             display: block;
             width: 30px;
@@ -166,6 +185,7 @@ header {
             background: url('https://image.nbkorea.com/NBRB_PC/common/bg_gnb_customer.png')
               no-repeat -100px 0;
             text-align: right;
+
             .blind {
               position: absolute;
               overflow: hidden;

@@ -6,8 +6,8 @@ import './Nav.scss';
 class Nav extends React.Component {
   render() {
     return (
-      <header>
-        <div className="top_menu">
+      <header className="navHead">
+        <div className="topMenu">
           <div className="inner">
             <img
               src="https://image.nbkorea.com/NBRB_PC/common/btn_mynb.png"
@@ -33,7 +33,7 @@ class Nav extends React.Component {
             </h1>
             <Category />
             <div className="customer">
-              <div className="top_search">
+              <div className="topSearch">
                 <a href="#">검색</a>
               </div>
               <div className="mymenu">
