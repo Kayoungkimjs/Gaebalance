@@ -21,7 +21,7 @@ class Join extends React.Component {
     })
       .then(response => response.json())
       .then(response => {
-        console.log('결과', response);
+        console.log(response);
       });
   };
 
