@@ -11,7 +11,7 @@ class Join extends React.Component {
         name: '김도담',
         gender: 1,
         birth_date: '2000-11-24',
-        phone_number: '011-7943-8999',
+        phone_number: '010-7943-8999',
         email: 'ddggsssss@naver.com',
         password: 'password13!',
         address: '서울특별시 강서구 공항호',
@@ -24,6 +24,7 @@ class Join extends React.Component {
         console.log('결과', response);
       });
   };
+
   render() {
     return (
       <main className="con_join">
@@ -88,18 +89,18 @@ class Join extends React.Component {
             </label>
             <div className="fdata">
               <input
-                type="text"
+                type="email"
                 maxLength="25"
                 title="이메일 아이디"
                 className="ip_text"
               />
-              <em className="unit">@</em>
+              {/* <em className="unit">@</em>
               <input
                 type="text"
                 maxLength="20"
                 title="이메일 도메인 주소"
                 className="ip_text"
-              />
+              /> */}
               <span className="select_box">
                 <select id="emailDomain" title="이메일 도메인 선택">
                   <option value="직접입력">직접입력</option>
