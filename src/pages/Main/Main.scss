@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-width: 1200px;
+  border: 1px solid red;
+  .slide_menu {
+    margin-bottom: 80px;
+    height: auto;
+    padding: 0 55px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid black;
+    img {
+      width: 100%;
+    }
+  }
+}

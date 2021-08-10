@@ -5,7 +5,7 @@ import './Join.scss';
 
 class Join extends React.Component {
   handleJoin = () => {
-    fetch('http://10.58.4.167:8000/users/join', {
+    fetch('http://10.58.0.81:8000/users/join', {
       method: 'POST',
       body: JSON.stringify({
         name: '김도담',
