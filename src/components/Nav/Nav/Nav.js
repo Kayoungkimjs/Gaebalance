@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import Category from 'Category';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -30,52 +31,7 @@ class Nav extends React.Component {
             <h1 className="logo">
               <a href="#">Gaebalance</a>
             </h1>
-            <div className="menu">
-              <ul className="clearfix">
-                <li className="nav">
-                  <a href="#" className="hover">
-                    MEN
-                  </a>
-                  <div className="category_box">
-                    <div className="inner">
-                      <div className="depth">
-                        <strong className="tit">상의</strong>
-                        <ul>
-                          <li>
-                            <a href="#">전체</a>
-                          </li>
-                          <li>
-                            <a href="#">긴팔</a>
-                          </li>
-                          <li>
-                            <a href="#">반팔</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="depth">
-                        <strong className="tit">하의</strong>
-                        <ul>
-                          <li>
-                            <a href="#">전체</a>
-                          </li>
-                          <li>
-                            <a href="#">긴바지</a>
-                          </li>
-                          <li>
-                            <a href="#">반바지</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li className="nav">
-                  <a href="#" className="hover">
-                    WOMEN
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <Category />
             <div className="customer">
               <div className="top_search">
                 <a href="#">검색</a>
