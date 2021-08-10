@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import '/Users/xia/Desktop/gaebalance/23-1st-Gaebalance-frontend/src/styles/reset.scss';
-@import '/Users/xia/Desktop/gaebalance/23-1st-Gaebalance-frontend/src/styles/common.scss';
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-.container {
+
+.loginContainer {
   min-width: 1200px;
   padding-top: 100px;
   padding-bottom: 200px;

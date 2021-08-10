@@ -4,7 +4,7 @@ import './Login.scss';
 class Login extends React.Component {
   render() {
     return (
-      <main className="container">
+      <main className="loginContainer">
         <div className="contents">
           <div className="login">
             <h2>LOG IN</h2>
