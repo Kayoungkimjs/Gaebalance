@@ -1,90 +1,93 @@
 import React from 'react';
-// import './data/SearchFilter.js';
+// import SearchFilterData from './SearchFilterData';
 import './SearchFilter.scss';
 
 class SearchFilter extends React.Component {
   render() {
-    const { id, content } = this.props;
+    const { item, color, size, price } = this.props;
+    console.log(item);
     return (
-      <>
-        <div className="filterWrap">
-          <ul className="searchFilter">
+      <div className="filterWrap">
+        <div className="itemFilter">
+          <button
+            onClick={this.props.handleToggle}
+            type="button"
+            className="toggleBtn"
+            value="item"
+          >
+            ITEM
+          </button>
+          <button
+            onClick={this.props.handleToggle}
+            type="button"
+            className="toggleBtn"
+            value="color"
+          >
+            COLOR
+          </button>
+          <button
+            onClick={this.props.handleToggle}
+            type="button"
+            className="toggleBtn"
+            value="size"
+          >
+            SIZE
+          </button>
+          <button
+            onClick={this.props.handleToggle}
+            type="button"
+            className="toggleBtn"
+            value="price"
+          >
+            PRICE
+          </button>
+          {/* {toggleMenu && toggleIndex === idx && (
+            <filterChoice
+            categorylist = {categories.categories[idx].category}
+            categoryIdx = {categories.categories[idx]}
+            /> */}
+        </div>
+        {item && (
+          <ul className="toggleMenu" value="item">
             <li>
-              <button
-                onClick={this.props.toggleModal}
-                type="button"
-                name="item"
-                id="item"
-              >
-                ITEM
-              </button>
+              <input value="item" name="choices" type="checkbox" />
+              상의
             </li>
             <li>
-              <button type="button" name="item" id="item">
-                COLOR
-              </button>
+              <input value="item" name="choices" type="checkbox" />
+              하의
             </li>
             <li>
-              <button type="button" name="item" id="item">
-                SIZE
-              </button>
+              <input value="item" name="choices" type="checkbox" />
+              아우터
             </li>
             <li>
-              <button type="button" name="item" id="item">
-                PRICE
-              </button>
+              <input value="item" name="choices" type="checkbox" />
+              비치웨어
             </li>
           </ul>
-        </div>
-        {this.modelOn && (
-          <div className="filterGroup">
-            <div className="item" id="filterItem">
-              <p className="hidden">ITEM</p>
-            </div>
-            <div className="box">
-              <div className="choices">
-                <input
-                  type="checkbox"
-                  id="item01"
-                  name="itemIndex"
-                  value="item"
-                />
-                <label for="item01">상의</label>
-                <input
-                  type="checkbox"
-                  id="item02"
-                  name="itemIndex"
-                  value="item"
-                />
-                <label for="item02"> 하의 </label>
-                <input
-                  type="checkbox"
-                  id="item03"
-                  name="itemIndex"
-                  value="item"
-                />
-                <label for="item03">아우터</label>
-                <input
-                  type="checkbox"
-                  id="item04"
-                  name="itemIndex"
-                  value="item"
-                />
-                <label for="item04">비치 웨어</label>
-              </div>
-              <div className="cancleChoices">
-                <button type="button">전체 취소</button>
-              </div>
-            </div>
-            <div className="filterStack">
-              <div className="choiceList"> </div>
-              <button type="button" className="applyBtn">
-                적용 하기
-              </button>
-            </div>
-          </div>
         )}
-      </>
+        {color && (
+          <ul className="toggleMenu" value="color">
+            <li>
+              <input value="color" name="choices" type="checkbox" />
+              red
+            </li>
+            <li>
+              <input value="color" name="choices" type="checkbox" />
+              orange
+            </li>
+            <li>
+              <input value="color" name="choices" type="checkbox" />
+              yellow
+            </li>
+            <li>
+              <input value="color" name="choices" type="checkbox" />
+              green
+            </li>
+          </ul>
+        )}
+      </div>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { API } from './config.js';
+import { API } from '../../config';
 import SearchFilter from './Components/SearchFilter';
 import ProductCard from './Components/ProductCard';
 import Dropdown from './Components/Dropdown';
@@ -13,11 +13,15 @@ class ProductLists extends React.Component {
     this.state = {
       productBox: [],
       value: '전체보기',
+      tabItem: false,
+      tabColor: false,
+      tabSize: false,
+      tabPrice: false,
     };
   }
 
   componentDidMount() {
-    fetch(`${API.PRODUCT}`)
+    fetch(`${API.PRODUCT}?limit=28&offset=0`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -27,53 +31,60 @@ class ProductLists extends React.Component {
   }
 
   handleFilter = e => {
-    this.setState({ value: e.target.value });
-    //전체보기
-    fetch(`${API.PRODUCT}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ productBox: data.response });
-      });
-    //신상품순
-    fetch(`${API.PRODUCT}?sort=manufacture_date`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ productBox: data.response });
-      });
-    //인기순
-    fetch(`${API.PRODUCT}?sort=stock`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ productBox: data.response });
-      });
-    //낮은 가격순
-    fetch(`${API.PRODUCT}?sort=-price`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ productBox: data.response });
-      });
-    //높은 가격순
-    fetch(`${API.PRODUCT}?sort=price`)
+    const { value } = e.target;
+    fetch(`${API.PRODUCT}?sort=${value}`)
       .then(response => response.json())
       .then(data => {
         this.setState({ productBox: data.response });
       });
   };
 
-  // toggleModal = () => {
-  //   const { modalOn } = this.state;
-  //   this.state({
-  //     modalOn: !modalOn,
-  //   });
-  // };
+  handleToggle = e => {
+    const { value } = e.target;
+    console.log(value);
+    const { tabItem, tabColor, tabSize, tabPrice } = this.state;
+    if ({ value } === 'item') {
+      this.setState({
+        tabItem: !tabItem,
+      });
+    }
+    if ({ value } === 'color') {
+      this.setState({
+        tabColor: !tabColor,
+      });
+    }
+    if ({ value } === 'size') {
+      this.setState({
+        tabSize: !tabSize,
+      });
+    }
+    if ({ value } === 'price') {
+      this.setState({
+        tabPrice: !tabPrice,
+      });
+    }
+  };
+  // const { tabItem, tabColor, tabSize, tabPrice } = this.state;
+  // this.setState({
+  //   tabItem: !tabItem,
+  //   tabColor: !tabColor,
+  //   tabSize: !tabSize,
+  //   tabPrice: !tabPrice,
+  // });
+
+  //조건문을 추가해서 1번 버튼 클릭되면 filter1되고, 2번 클릭하면, filter2가 되고..
 
   render() {
-    console.log(this.state.productBox);
-    // const { modalOn } = this.state;
     return (
       <div className="productListWrap">
         <h1 className="category">비치웨어</h1>
-        <SearchFilter />
+        <SearchFilter
+          handleToggle={this.handleToggle}
+          item={this.state.tabItem}
+          color={this.state.tabColor}
+          size={this.state.tabSize}
+          price={this.state.tabPrice}
+        />
         <Dropdown handleFilter={this.handleFilter} />
         <div className="productCardWrap">
           {this.state.productBox.map(product => {
@@ -95,5 +106,4 @@ class ProductLists extends React.Component {
     );
   }
 }
-
 export default ProductLists;
