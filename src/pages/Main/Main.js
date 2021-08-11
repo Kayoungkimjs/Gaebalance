@@ -4,7 +4,13 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
-    return <></>;
+    return (
+      <div className="container">
+        <div className="slide_menu"></div>
+        <div className="gbnow"></div>
+        <div className="shopall"></div>
+      </div>
+    );
   }
 }
 

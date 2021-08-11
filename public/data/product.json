@@ -1,0 +1,30 @@
+{
+  "id": "2",
+  "name": "프레쉬폼x 1080 V11 (4E)",
+  "price": "159,000",
+  "style_code": "NBPFBF701Y",
+  "origin": "VIETNAM",
+  "manufacture_date": "2021년 4월",
+  "description": "제품 특징입니다. 제품 특징입니다. 제품 특징입니다. 제품 특징입니다. 제품 특징입니다. 제품 특징입니다.",
+  "image_url": "/images/ProductDetail/mockProduct.png",
+  "image_list": [
+    {
+      "src": "/images/ProductDetail/mockProduct.png"
+    },
+    {
+      "src": "/images/ProductDetail/mockProduct.png"
+    },
+    {
+      "src": "/images/ProductDetail/mockProduct.png"
+    },
+    {
+      "src": "/images/ProductDetail/mockProduct.png"
+    },
+    {
+      "src": "/images/ProductDetail/mockProduct.jpg"
+    }
+  ],
+  "color": "Green",
+  "sub_category": "",
+  "category": ""
+}
