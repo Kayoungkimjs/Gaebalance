@@ -109,24 +109,22 @@
     .btnWrap {
       margin-top: 30px;
 
-      button {
+      .white {
+        border: 1px solid #898989;
+        margin-right: 10px;
+        background: #fff;
+        color: #141414;
         display: inline-block;
         min-width: 140px;
         padding: 15px 10px;
         border-radius: 5px;
         width: auto;
         font-size: 16px;
-        color: #141414;
+
         vertical-align: top;
         line-height: 1;
         box-sizing: border-box;
         text-align: center;
-      }
-
-      .white {
-        border: 1px solid #898989;
-        margin-right: 10px;
-        background: #fff;
       }
 
       .black {
@@ -134,6 +132,17 @@
         background: #141414;
         color: #fff;
         margin-left: 10px;
+        display: inline-block;
+        min-width: 140px;
+        padding: 15px 10px;
+        border-radius: 5px;
+        width: auto;
+        font-size: 16px;
+
+        vertical-align: top;
+        line-height: 1;
+        box-sizing: border-box;
+        text-align: center;
       }
     }
   }

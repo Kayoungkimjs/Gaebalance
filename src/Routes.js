@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductLists from './pages/ProductLists/ProductLists';
-import Login from './pages/Login/Login';
+// import Login from './pages/Login/Login';
 
 import SlideMenu from './pages/Main/SlideMenu/SlideMenu';
 import Gbnow from './pages/Main/Gbnow/Gbnow';
@@ -20,7 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/slideMenu" component={SlideMenu} />
 
           <Route exact path="/nav" component={Nav} />
-          <Route exact path="/login" component={Login} />
+          {/* <Route exact path="/login" component={Login} /> */}
           <Route exact path="/" component={main} />
           <Route exact path="/productLists" component={ProductLists} />
 
