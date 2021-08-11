@@ -1,6 +1,6 @@
 import React from 'react';
 import './Gbnow.scss';
-import { Link } from 'react-router-dom';
+
 class Gbnow extends React.Component {
   render() {
     return (
@@ -11,7 +11,7 @@ class Gbnow extends React.Component {
             <p>
               <img
                 src="https://image.nbkorea.com/NBRB_Site/20210809/NB20210809164217216001.jpg"
-                alt=""
+                alt="의류"
               />
             </p>
             <div className="nowInfo">
@@ -24,7 +24,7 @@ class Gbnow extends React.Component {
             <p>
               <img
                 src="https://image.nbkorea.com/NBRB_Site/20210809/NB20210809164217216001.jpg"
-                alt=""
+                alt="의류"
               />
             </p>
             <div className="nowInfo">
@@ -37,7 +37,7 @@ class Gbnow extends React.Component {
             <p>
               <img
                 src="https://image.nbkorea.com/NBRB_Site/20210809/NB20210809164217216001.jpg"
-                alt=""
+                alt="의류"
               />
             </p>
             <div className="nowInfo">
@@ -50,7 +50,7 @@ class Gbnow extends React.Component {
             <p>
               <img
                 src="https://image.nbkorea.com/NBRB_Site/20210809/NB20210809164217216001.jpg"
-                alt=""
+                alt="의류"
               />
             </p>
             <div className="nowInfo">
@@ -63,7 +63,7 @@ class Gbnow extends React.Component {
             <p>
               <img
                 src="https://image.nbkorea.com/NBRB_Site/20210809/NB20210809164217216001.jpg"
-                alt=""
+                alt="의류"
               />
             </p>
             <div className="nowInfo">
@@ -76,7 +76,7 @@ class Gbnow extends React.Component {
             <p>
               <img
                 src="https://image.nbkorea.com/NBRB_Site/20210809/NB20210809164217216001.jpg"
-                alt=""
+                alt="의류"
               />
             </p>
             <div className="nowInfo">

@@ -10,7 +10,7 @@ class Allshop extends React.Component {
           <li>
             <img
               src="https://image.nbkorea.com/NBRB_Site/20210430/NB20210430142300922001.jpg"
-              alt=""
+              alt="의류"
             />
             <div className="shopMen">
               <span className="men">Men</span>
@@ -19,7 +19,7 @@ class Allshop extends React.Component {
           <li>
             <img
               src="https://image.nbkorea.com/NBRB_Site/20210430/NB20210430142319459001.jpg"
-              alt=""
+              alt="의류"
             />
             <div className="shopMen">
               <span className="men">Women</span>
@@ -28,7 +28,7 @@ class Allshop extends React.Component {
           <li>
             <img
               src="https://image.nbkorea.com/NBRB_Site/20210622/NB20210622090817592001.jpg"
-              alt=""
+              alt="의류"
             />
             <div className="shopMen">
               <span className="men">Kid</span>

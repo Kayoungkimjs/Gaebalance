@@ -1,10 +1,11 @@
 import React from 'react';
-import './SlideMenu.scss';
 import { Link } from 'react-router-dom';
+import './SlideMenu.scss';
+
 class SlideMenu extends React.Component {
   render() {
     return (
-      <section>
+      <section className="slidemenu">
         <input type="radio" name="slide" id="slide01" checked />
         <input type="radio" name="slide" id="slide02" />
         <input type="radio" name="slide" id="slide03" />

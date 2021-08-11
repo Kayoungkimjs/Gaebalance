@@ -1,9 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import './Main.scss';
 import SlideMenu from './SlideMenu/SlideMenu';
 import Gbnow from './Gbnow/Gbnow';
 import Allshop from './Allshop/Allshop';
+import './Main.scss';
+
 class Main extends React.Component {
   render() {
     return (
@@ -16,4 +17,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default withRouter(Main);
