@@ -15,11 +15,6 @@ class Join extends React.Component {
   }
 
   handleJoin = () => {
-    // const { name, value } = this.state;
-    // this.setState({
-    //   [name]: value,
-    // });
-    // console.log(this.state.name);
     fetch(`${API.JOIN}`, {
       method: 'POST',
       body: JSON.stringify({
