@@ -1,0 +1,35 @@
+.orderListBox {
+  border-top: 1px solid #b2bec3;
+  margin-top: 20px;
+
+  .orderList {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .orderName {
+    }
+    .orderQuantity {
+    }
+    .orderPrice {
+      font-weight: bold;
+    }
+  }
+  .totalPriceBox {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid black;
+
+    .totalPriceName {
+      margin: auto 0;
+    }
+
+    .totalPrice {
+      margin: auto 0;
+      font-size: x-large;
+      font-weight: bold;
+    }
+  }
+}
