@@ -2,6 +2,7 @@
 .con_join {
   width: 990px;
   margin: 0 auto;
+
   h2 {
     text-align: center;
     margin-top: 100px;
@@ -12,6 +13,7 @@
     font-family: 'Playfair Display', serif;
     margin-bottom: 100px;
   }
+
   .title_box {
     position: relative;
 
@@ -22,18 +24,22 @@
       line-height: 1;
     }
   }
+
   .form {
     padding: 10px 0 40px;
     border-top: 2px solid #000;
     border-bottom: 1px solid #dbdbdb;
+
     .row {
       padding-top: 30px;
+
       .ftit {
         float: left;
         width: 150px;
         padding-top: 13px;
         // padding-left: 30px;
         line-height: 1.3;
+
         .compulsory {
           display: inline-block;
           width: 3px;
@@ -45,8 +51,10 @@
           vertical-align: top;
         }
       }
+
       .fdata {
         padding-left: 180px;
+
         input {
           margin-right: 4px;
           vertical-align: middle;
@@ -61,12 +69,14 @@
           outline: none;
           font-size: 16px;
         }
+
         .select_box {
           display: inline-block;
           width: 170px;
           margin-right: 4px;
           vertical-align: middle;
           box-sizing: border-box;
+
           select {
             width: 100%;
             height: 45px;
@@ -75,6 +85,7 @@
             border-radius: 1px;
             color: #121212;
             box-sizing: border-box;
+
             option {
               font-weight: normal;
               display: block;
@@ -84,15 +95,18 @@
             }
           }
         }
+
         .ip_text {
           width: 170px;
         }
+
         .unit {
           display: inline-block;
           padding: 15px 8px 0 3px;
           line-height: 1;
           vertical-align: top;
         }
+
         .ip_info {
           display: block;
           margin-top: 19px;
@@ -100,11 +114,14 @@
           font-size: 12px;
           line-height: 1.2;
         }
+
         .block {
           width: 634px;
         }
+
         .chk {
           margin-right: 43px;
+
           .ip_chekbox {
             width: 20px;
             margin-right: 10px;
@@ -113,11 +130,13 @@
       }
     }
   }
+
   .btn {
     margin-top: 50px;
 
     display: block;
     text-align: center;
+
     button {
       min-width: 140px;
       padding: 20px 18px;

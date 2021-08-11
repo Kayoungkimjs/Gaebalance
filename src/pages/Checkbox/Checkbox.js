@@ -7,15 +7,15 @@ class Checkbox extends React.Component {
     super(props);
     this.state = { isCheckOn: true };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick(this);
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState(state => ({
       isCheckOn: !state.isCheckOn,
     }));
     console.log(this.handleClick);
-  }
+  };
 
   render() {
     return (

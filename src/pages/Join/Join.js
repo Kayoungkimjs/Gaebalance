@@ -20,7 +20,7 @@ class Join extends React.Component {
     //   [name]: value,
     // });
     // console.log(this.state.name);
-    fetch('http://10.58.5.112:8000/users/join', {
+    fetch(`${API.JOIN}`, {
       method: 'POST',
       body: JSON.stringify({
         name: this.state.name,
@@ -41,10 +41,6 @@ class Join extends React.Component {
   };
 
   render() {
-    console.log(this.state.name);
-    console.log(this.state.phone_number);
-    console.log(this.state.email);
-    console.log(this.state.password);
     return (
       <main className="con_join">
         <h2>SIGN UP</h2>
