@@ -4,16 +4,31 @@ import Checkbox from '../Checkbox/Checkbox';
 import './Join.scss';
 
 class Join extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      phone_number: '',
+      email: '',
+      password: '',
+    };
+  }
+
   handleJoin = () => {
-    fetch('http://10.58.0.81:8000/users/join', {
+    // const { name, value } = this.state;
+    // this.setState({
+    //   [name]: value,
+    // });
+    // console.log(this.state.name);
+    fetch('http://10.58.5.112:8000/users/join', {
       method: 'POST',
       body: JSON.stringify({
-        name: '김도담',
+        name: this.state.name,
         gender: 1,
         birth_date: '2000-11-24',
-        phone_number: '010-7943-8999',
-        email: 'ddggsssss@naver.com',
-        password: 'password13!',
+        phone_number: this.state.phone_number,
+        email: this.state.email,
+        password: this.state.password,
         address: '서울특별시 강서구 공항호',
         size_id: 1,
         colors_id: [3, 6, 7],
@@ -26,6 +41,10 @@ class Join extends React.Component {
   };
 
   render() {
+    console.log(this.state.name);
+    console.log(this.state.phone_number);
+    console.log(this.state.email);
+    console.log(this.state.password);
     return (
       <main className="con_join">
         <h2>SIGN UP</h2>
@@ -39,7 +58,16 @@ class Join extends React.Component {
               <em className="compulsory">필수</em>
             </label>
             <div className="fdata">
-              <input type="text" maxLength="5" title="이름" />
+              <input
+                type="text"
+                maxLength="5"
+                title="이름"
+                onChange={e => {
+                  this.setState({
+                    name: e.target.value,
+                  });
+                }}
+              />
             </div>
           </div>
           <div className="row">
@@ -77,8 +105,13 @@ class Join extends React.Component {
               <input
                 type="tel"
                 title="두 번째 번호"
-                maxLength="13"
                 placeholder="-없이 숫자만 입력"
+                maxLength="13"
+                onChange={e => {
+                  this.setState({
+                    phone_number: e.target.value,
+                  });
+                }}
               />
             </div>
           </div>
@@ -93,14 +126,13 @@ class Join extends React.Component {
                 maxLength="25"
                 title="이메일 아이디"
                 className="ip_text"
+                onChange={e => {
+                  this.setState({
+                    email: e.target.value,
+                  });
+                }}
               />
-              {/* <em className="unit">@</em>
-              <input
-                type="text"
-                maxLength="20"
-                title="이메일 도메인 주소"
-                className="ip_text"
-              /> */}
+
               <span className="select_box">
                 <select id="emailDomain" title="이메일 도메인 선택">
                   <option value="직접입력">직접입력</option>
@@ -120,7 +152,16 @@ class Join extends React.Component {
               <em className="compulsory">필수</em>
             </label>
             <div className="fdata">
-              <input type="password" maxLength="12" title="비밀번호" />
+              <input
+                type="password"
+                maxLength="12"
+                title="비밀번호"
+                onChange={e => {
+                  this.setState({
+                    password: e.target.value,
+                  });
+                }}
+              />
               <em className="ip_info">
                 8~12자 이내 영문,숫자,특수문자(""-+/\:; 제외)
               </em>
