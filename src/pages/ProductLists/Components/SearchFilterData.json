@@ -1,0 +1,48 @@
+{
+  "FILTERS": [
+    {
+      "id": 1,
+      "index": "item",
+      "category": [
+        { "id": 1, "name": "상의" },
+        { "id": 2, "name": "하의" },
+        { "id": 3, "name": "아우터" },
+        { "id": 4, "name": "비치웨어" }
+      ]
+    },
+    {
+      "id": 2,
+      "index": "color",
+      "category": [
+        { "id": 6, "name": "RED" },
+        { "id": 7, "name": "ORANGE" },
+        { "id": 8, "name": "YELLO" },
+        { "id": 9, "name": "GREEN" },
+        { "id": 10, "name": "BLUE" },
+        { "id": 11, "name": "NAVY" },
+        { "id": 12, "name": "PURPPLE" },
+        { "id": 13, "name": "BLACK" },
+        { "id": 14, "name": "WHITE" },
+        { "id": 15, "name": "GRAY" }
+      ]
+    },
+    {
+      "id": 3,
+      "index": "size",
+      "category": [
+        { "id": 16, "name": "S" },
+        { "id": 17, "name": "M" },
+        { "id": 18, "name": "L" }
+      ]
+    },
+    {
+      "id": 2,
+      "index": "price",
+      "category": [
+        { "id": 19, "name": "5만원 미만" },
+        { "id": 20, "name": "5만원 - 10만원 미만" },
+        { "id": 21, "name": "20만원 이상" }
+      ]
+    }
+  ]
+}
