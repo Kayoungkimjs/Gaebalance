@@ -1,4 +1,5 @@
 import React from 'react';
+import { API } from '../../config';
 // import { withRouter } from 'react-router';
 import './Login.scss';
 class Login extends React.Component {
@@ -13,7 +14,7 @@ class Login extends React.Component {
     const { id, pw } = this.state;
 
     if (id.includes('@') && pw.length > 4) {
-      fetch('http://10.58.5.112:8000/users/login', {
+      fetch(`${API.LOGIN}`, {
         method: 'POST',
         body: JSON.stringify({ email: id, password: pw }),
       })
