@@ -14,10 +14,7 @@ class SlideMenu extends React.Component {
             <li>
               <Link>
                 <label for="slide03" class="left"></label>
-                <img
-                  src="https://image.nbkorea.com/NBRB_Site/20210716/NB20210716100731945001.jpg"
-                  alt=""
-                />
+                <img src="./images/image.png" alt="" />
                 <label for="slide02" class="right"></label>
               </Link>
             </li>
