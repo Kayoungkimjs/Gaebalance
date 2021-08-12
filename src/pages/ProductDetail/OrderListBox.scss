@@ -5,14 +5,69 @@
   .orderList {
     height: 54px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     .orderName {
+      width: 140px;
     }
     .orderQuantity {
+      display: flex;
+      width: 140px;
+      position: relative;
+      .minusBtn {
+        width: 30px;
+        height: 30px;
+        border-radius: 0px;
+        border: 1px solid #b2bec3;
+        border-right: none;
+        font-size: large;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .fa-minus {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        transform: translate(-50%, -50%);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .orderQuantityInput {
+        text-align: center;
+        width: 40px;
+        height: 30px;
+        border-radius: 0px;
+        border: 1px solid #b2bec3;
+      }
+      .plusBtn {
+        width: 30px;
+        height: 30px;
+        border-radius: 0px;
+        border: 1px solid #b2bec3;
+        border-left: none;
+        font-size: large;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .fa-plus {
+        position: absolute;
+        left: 85px;
+        top: 15px;
+        transform: translate(-50%, -50%);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
     .orderPrice {
+      width: 100px;
       font-weight: bold;
     }
   }

@@ -1,0 +1,175 @@
+.shoppingCart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  .shoppingCartWarp {
+    margin-top: 80px;
+    width: 980px;
+
+    .shoppingCartHeader {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+
+      .shoppingCartTitle {
+        font-size: xx-large;
+        font-weight: bold;
+      }
+
+      .shoppingCartProgress {
+        width: 200px;
+        font-size: large;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+
+        .currentCart {
+          height: 30px;
+          border-bottom: 3px solid black;
+        }
+
+        .fa-angle-right {
+          height: 30px;
+        }
+
+        .currentComplete {
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .shoppingListWrap {
+    .shoppingListBox {
+      .shoppingListTitle {
+        height: 30px;
+
+        .productCount {
+          font-size: large;
+          color: #cf082c;
+          font-weight: bold;
+        }
+      }
+
+      .shoppingList {
+        .shoppingListTable {
+          width: 100%;
+
+          colgroup {
+            .colW1 {
+              width: 38px;
+            }
+
+            .colW2 {
+              width: auto;
+            }
+
+            .colW3 {
+              width: 190px;
+            }
+
+            .colW4 {
+              width: 260px;
+            }
+
+            .colW5 {
+              width: 120px;
+            }
+          }
+
+          .shoppingListTableHead {
+            border-top: 2px solid black;
+            border-bottom: 1px solid #dbdbdb;
+
+            .shoppingListTableRow {
+              th {
+                height: 60px;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .paymentWrap {
+      width: 980px;
+      height: 290px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .paymentBox {
+        width: 980px;
+        height: 200px;
+        border: 1px solid #dbdbdb;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .priceInfo {
+          width: 670px;
+          height: 200px;
+          padding-left: 50px;
+
+          .priceBox {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dbdbdb;
+          }
+
+          .delvPriceBox {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+
+        .totalPriceBox {
+          width: 260px;
+          height: 100%;
+          background-color: #f4f4f4;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+
+          .orderPrice {
+            margin-bottom: 10px;
+          }
+
+          .delvPrice {
+          }
+
+          .totalPrice {
+            margin-top: 20px;
+            font-size: x-large;
+            color: #cf082c;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .orderButtonBox {
+        margin: auto 0px auto auto;
+
+        .allOrderBtn {
+          width: 200px;
+          height: 60px;
+          background-color: #cf082c;
+          border: none;
+          color: white;
+          font-size: large;
+        }
+      }
+    }
+  }
+}
