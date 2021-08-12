@@ -31,11 +31,12 @@ class Login extends React.Component {
   };
 
   handleidInput = event => {
-    this.setState({ [event.target.id]: event.target.value });
+    const { id, value } = event.target;
+
+    this.setState({ [id]: value });
   };
 
   render() {
-    console.log();
     return (
       <main className="loginContainer">
         <div className="contents">
@@ -54,7 +55,7 @@ class Login extends React.Component {
                 placeholder="비밀번호"
                 className="pw"
                 id="pw"
-                onChange={this.handleInput}
+                onChange={this.handleidInput}
               />
 
               <div className="check">
