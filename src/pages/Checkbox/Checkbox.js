@@ -15,8 +15,6 @@ class Checkbox extends React.Component {
   };
 
   render() {
-    const array = ['빨강', '주황'];
-    const arrayList = array.map;
     console.log(this.handleClick);
     return (
       <div className="row">
@@ -33,10 +31,10 @@ class Checkbox extends React.Component {
               value="0"
               onClick={this.handleClick}
             />
-            {arrayList}
-            {/* <label>빨강</label> */}
+
+            <label>빨강</label>
           </span>
-          {/* <span className="chk">
+          <span className="chk">
             <input
               type="checkbox"
               name="color"
@@ -125,7 +123,7 @@ class Checkbox extends React.Component {
               onClick={this.handleClick}
             />
             <label>회색</label>
-          </span> */}
+          </span>
           <em className="ip_info">최대 3개 선택 가능</em>
         </div>
       </div>
