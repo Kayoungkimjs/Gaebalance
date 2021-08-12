@@ -170,7 +170,7 @@ class ProductLists extends React.Component {
   };
 
   render() {
-    const { productBox, handleShowMore } = this.state;
+    const { productBox } = this.state;
     return (
       <>
         <div className="productListWrap">
@@ -201,7 +201,7 @@ class ProductLists extends React.Component {
         </div>
         <button
           type="button"
-          onClick={() => handleShowMore(1)}
+          onClick={() => this.handleShowMore(1)}
           className="showMoreBtn"
         >
           더 보기
