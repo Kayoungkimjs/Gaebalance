@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import Category from './Category';
 import './Nav.scss';
 
@@ -40,12 +41,12 @@ class Nav extends React.Component {
                 <a href="#" className="hidden">
                   페이지
                 </a>
-                <a href="#" className="log">
+                <Link to="Login" className="log">
                   로그인
-                </a>
-                <a href="#" className="join">
+                </Link>
+                <Link to="Join" className="join">
                   회원가입
-                </a>
+                </Link>
               </div>
               <div className="cart">
                 <a href="#" className="shop">
