@@ -30,11 +30,8 @@ class Login extends React.Component {
       });
   };
 
-  handleIdInput = event => {
-    this.setState({ id: event.target.value });
-  };
-  handlePwInput = event => {
-    this.setState({ pw: event.target.value });
+  handleidInput = event => {
+    this.setState({ [event.target.id]: event.target.value });
   };
 
   render() {
@@ -49,13 +46,15 @@ class Login extends React.Component {
                 type="text"
                 placeholder="아이디"
                 className="id"
-                onChange={this.handleIdInput}
+                id="id"
+                onChange={this.handleidInput}
               />
               <input
                 type="password"
                 placeholder="비밀번호"
                 className="pw"
-                onChange={this.handlePwInput}
+                id="pw"
+                onChange={this.handleInput}
               />
 
               <div className="check">
