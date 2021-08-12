@@ -13,16 +13,21 @@ class Login extends React.Component {
   goToMain = () => {
     const { id, pw } = this.state;
 
-    if (id.includes('@') && pw.length > 4) {
-      fetch(`${API.LOGIN}`, {
-        method: 'POST',
-        body: JSON.stringify({ email: id, password: pw }),
-      })
-        .then(response => response.json())
-        .then(result => {
-          this.props.history.push('./Main');
-        });
-    }
+    fetch(`${API.LOGIN}`, {
+      method: 'POST',
+      body: JSON.stringify({ email: id, password: pw }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.access_token) {
+          console.log(response.access_token);
+          localStorage.setItem('token', response.access_token);
+          this.props.history.push('/Nav');
+        } else {
+          alert('아이디 / 비밀번호를 다시 입력해주세요');
+        }
+        // this.props.history.push('./Main');
+      });
   };
 
   handleIdInput = event => {
@@ -33,6 +38,7 @@ class Login extends React.Component {
   };
 
   render() {
+    console.log();
     return (
       <main className="loginContainer">
         <div className="contents">
