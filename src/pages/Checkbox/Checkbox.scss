@@ -20,78 +20,14 @@
   }
 
   .fdata {
-    padding-left: 180px;
-
-    input {
-      display: inline-block;
-      width: 270px;
-      height: 45px;
-      padding: 14px 15px;
-      margin-right: 4px;
-      vertical-align: middle;
-      line-height: 1;
-      border: 1px solid #dbdbdb;
-      box-sizing: border-box;
-      outline: none;
-      color: #141414;
-      font-size: 16px;
-    }
-
-    .select_box {
-      display: inline-block;
-      width: 170px;
-      margin-right: 4px;
-      vertical-align: middle;
-      box-sizing: border-box;
-
-      select {
-        width: 100%;
-        height: 45px;
-        padding: 0 30px 0 15px;
-        border: 1px solid #dbdbdb;
-        border-radius: 1px;
-        color: #121212;
-        box-sizing: border-box;
-
-        option {
-          display: block;
-          min-height: 1.2em;
-          padding: 0px 2px 1px;
-          white-space: nowrap;
-          font-weight: normal;
-        }
-      }
-    }
-
-    .ip_text {
-      width: 170px;
-    }
-
-    .unit {
-      display: inline-block;
-      padding: 15px 8px 0 3px;
-      line-height: 1;
-      vertical-align: top;
-    }
-
-    .ip_info {
-      display: block;
-      margin-top: 19px;
-      line-height: 1.2;
-      color: #777;
-      font-size: 12px;
-    }
-
-    .block {
-      width: 634px;
-    }
-
     .chk {
       margin-right: 43px;
       display: flex;
-      .listr {
+
+      .chkList {
         margin-left: 5px;
-        .ip_chekbox {
+
+        .ipChekbox {
           width: 20px;
           margin-right: 10px;
         }
