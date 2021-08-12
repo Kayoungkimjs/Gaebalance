@@ -1,0 +1,44 @@
+.productCardWrap {
+  margin-right: 30px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 1200px;
+  display: flex;
+
+  .productCardGroup {
+    display: block;
+    padding: 30px;
+    width: 240px;
+
+    &:hover {
+      border: 3px solid #da435d;
+      cursor: pointer;
+    }
+
+    .productImage {
+      margin-bottom: 30px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .cardDesc {
+      text-align: left;
+
+      strong {
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      .starRating img {
+        margin-bottom: 10px;
+        width: 15px;
+        height: 15px;
+      }
+
+      .bestTag {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
