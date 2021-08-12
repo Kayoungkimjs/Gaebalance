@@ -99,9 +99,9 @@ class ShoppingCart extends React.Component {
                     <p className="orderPrice">결제 예정 금액</p>
                     <p className="delvPrice">주문금액 + 배송료</p>
                     <p className="totalPrice">
-                      {Math.floor(this.state.totalPrice).toLocaleString(
-                        'ko-KR'
-                      )}{' '}
+                      {(
+                        Math.floor(this.state.totalPrice / 1000) * 1000
+                      ).toLocaleString('ko-KR')}{' '}
                       원
                     </p>
                   </div>

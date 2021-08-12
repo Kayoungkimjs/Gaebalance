@@ -43,7 +43,7 @@ class AddCart extends React.Component {
           <td className="tableProductPrice">
             <div className="tableProductPriceValue">
               {(
-                Math.floor(this.props.cartInfo.price / 100) * 100
+                Math.floor(this.props.cartInfo.price / 1000) * 1000
               ).toLocaleString('ko-KR')}{' '}
               원
             </div>
