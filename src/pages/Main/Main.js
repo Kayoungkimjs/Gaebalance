@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+
 import './Main.scss';
 
 class Main extends React.Component {
@@ -8,4 +9,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default withRouter(Main);
