@@ -1,17 +1,20 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import SlideMenu from './SlideMenu/SlideMenu';
+import Gbnow from './Gbnow/Gbnow';
+import Allshop from './Allshop/Allshop';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
-      <div className="container">
-        <div className="slide_menu"></div>
-        <div className="gbnow"></div>
-        <div className="shopall"></div>
+      <div className="mainContainer">
+        <SlideMenu />
+        <Gbnow />
+        <Allshop />
       </div>
     );
   }
 }
 
-export default Main;
+export default withRouter(Main);
