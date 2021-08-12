@@ -21,7 +21,7 @@ class ProductCard extends React.Component {
               />
             </span>
             <strong>
-              {(Math.floor(price / 100) * 100).toLocaleString('ko-KR')}원
+              {(Math.floor(price / 1000) * 1000).toLocaleString('ko-KR')}원
             </strong>
           </div>
         </div>
