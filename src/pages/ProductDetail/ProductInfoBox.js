@@ -22,7 +22,7 @@ class ProductInfoBox extends React.Component {
             </div>
             <div className="productColor flex">
               <div>컬러</div>
-              <div>(30){this.props.info.color}</div>
+              <div>{this.props.info.color}</div>
             </div>
             <div className="productCountry flex">
               <div>제조국</div>

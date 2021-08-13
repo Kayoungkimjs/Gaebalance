@@ -3,6 +3,7 @@ import '../ProductDetail/ProductDetail.scss';
 import OrderListBox from './OrderListBox';
 import ProductInfoBox from './ProductInfoBox';
 import SizePicker from './SizePicker';
+import { API } from '../../config';
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -12,11 +13,13 @@ class ProductDetail extends React.Component {
       productInfoList: {},
       mainImage: '',
       selected: [],
+      totalPrice: 0,
     };
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.58:8000/products/3', {
+    console.log('넘어온 id =' + this.props.match.params.id);
+    fetch(`${API.PRODUCT}/${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(response => response.json())
@@ -25,6 +28,58 @@ class ProductDetail extends React.Component {
       });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { productInfoList, selected } = this.state;
+    let newPrice = 0;
+    console.log(prevState.selected.length);
+    if (selected.length > 0 || prevState.selected.length > 0) {
+      if (
+        prevState.selected.length !== this.state.selected.length ||
+        prevState.selected.length === 0
+      ) {
+        selected.map(item => {
+          newPrice += item.quantity * productInfoList.price;
+        });
+
+        this.setState({
+          totalPrice: newPrice,
+        });
+        console.log('업데이트!');
+      }
+    }
+  }
+
+  goCart = e => {
+    const { productInfoList, selected } = this.state;
+    let sizeId;
+
+    if (selected[0].size === 'S') {
+      sizeId = 1;
+    } else if (selected[0].size === 'M') {
+      sizeId = 2;
+    } else {
+      sizeId = 3;
+    }
+
+    console.log('사이즈는?' + sizeId);
+    console.log('아이디는?' + productInfoList.id);
+
+    console.log('보내기');
+    fetch(`${API.CART}`, {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
+      body: JSON.stringify({
+        product_id: productInfoList.id,
+        size_id: sizeId,
+        count: selected[0].quantity,
+      }),
+    });
+
+    this.props.history.push('/shoppingCart');
+  };
+
   imgChange = e => {
     this.setState({
       mainImage: e.target.src,
@@ -32,12 +87,78 @@ class ProductDetail extends React.Component {
   };
 
   addSelected = value => {
+    const { selected } = this.state;
+
+    const sizeChecked = () => {
+      return selected.map(item => {
+        if (item.size === value) {
+          return false;
+        }
+      });
+    };
     this.setState({
-      selected: this.state.selected.concat({ size: value }),
+      selected: sizeChecked
+        ? this.state.selected.concat({
+            size: value,
+            id: Date.now(),
+            quantity: 1,
+          })
+        : null,
+    });
+
+    sizeChecked();
+  };
+
+  deleteOrder = id => {
+    const { selected, productInfoList } = this.state;
+    let newPrice = 0;
+    const newSelected = selected.filter(item => {
+      return item.id !== Number(id);
+    });
+
+    this.setState({
+      selected: newSelected,
+    });
+
+    selected.map(item => {
+      newPrice += item.quantity * productInfoList.price;
+    });
+
+    this.setState({
+      totalPrice: newPrice,
+    });
+  };
+
+  quantitySet = (setName, id) => {
+    const { selected, productInfoList, totalPrice } = this.state;
+    let newPrice = 0;
+
+    console.log('누른 버튼' + setName);
+    console.log('글 번호' + id);
+
+    const newSelected = [...this.state.selected];
+
+    newSelected.map(item => {
+      if (Number(id) === item.id) {
+        if (setName === 'plus') item.quantity = item.quantity + 1;
+        if (setName === 'minus' && item.quantity > 1)
+          item.quantity = item.quantity - 1;
+      }
+    });
+    selected.map(item => {
+      newPrice += item.quantity * productInfoList.price;
+    });
+    this.setState({
+      totalPrice: newPrice,
+    });
+
+    this.setState({
+      selected: newSelected,
     });
   };
 
   render() {
+    console.log(this.state.selected);
     return (
       <article className="productDetail">
         <div className="container">
@@ -99,8 +220,9 @@ class ProductDetail extends React.Component {
                 <div className="priceBox">
                   <div>
                     <span className="productPrice">
-                      {Math.floor(
-                        this.state.productInfoList.price
+                      {(
+                        Math.floor(this.state.productInfoList.price / 1000) *
+                        1000
                       ).toLocaleString('ko-KR')}
                       <span className="productWon">원</span>
                     </span>
@@ -151,13 +273,21 @@ class ProductDetail extends React.Component {
                       productInfo={this.state.productInfoList}
                       size={this}
                       key={index}
+                      deleteOrder={this.deleteOrder}
+                      quantitySet={this.quantitySet}
+                      totalPrice={this.state.totalPrice}
                     />
                   );
                 })}
 
                 <div className="totalPriceBox">
                   <div className="totalPriceName">합계</div>
-                  <div className="totalPrice">0 원</div>
+                  <div className="totalPrice">
+                    {(
+                      Math.floor(this.state.totalPrice / 1000) * 1000
+                    ).toLocaleString('ko-KR')}{' '}
+                    원
+                  </div>
                 </div>
                 <div>
                   <div></div>
@@ -165,7 +295,9 @@ class ProductDetail extends React.Component {
                 </div>
               </div>
               <div className="purchaseBox">
-                <button className="basketBtn">장바구니</button>
+                <button onClick={this.goCart} className="basketBtn">
+                  장바구니
+                </button>
                 <button className="purchaseBtn">구매하기</button>
                 <div>
                   * 주문/배송/반품 등 일반 문의는 1:1 문의를 이용해 주시기

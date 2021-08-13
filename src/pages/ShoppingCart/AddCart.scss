@@ -1,0 +1,122 @@
+.tableBody {
+  tr {
+    border-bottom: 1px solid #dbdbdb;
+
+    .tableProductInfoBox {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+      .shoppingListImage {
+        width: 84px;
+        height: 84px;
+        img {
+          width: 84px;
+          height: 84px;
+          object-fit: cover;
+        }
+      }
+
+      .tableProductInfo {
+        margin-left: 30px;
+
+        .cartInfoName {
+          text-decoration: none;
+          font-size: large;
+          font-weight: bold;
+          text-decoration: none;
+          &:visited {
+            color: inherit;
+          }
+        }
+
+        .sizeColor {
+          margin-top: 15px;
+          margin-bottom: 5px;
+          color: #777777;
+        }
+        .price {
+          color: #777777;
+        }
+      }
+    }
+
+    .tableProductAmount {
+      vertical-align: middle;
+
+      // div {
+      //   width: 40px;
+      //   height: 40px;
+      //   margin: 0 auto;
+      // }
+      .orderQuantity {
+        display: flex;
+        justify-content: center;
+        .minusBtn {
+          width: 30px;
+          height: 30px;
+          border-radius: 0px;
+          border: 1px solid #b2bec3;
+          border-right: none;
+          font-size: large;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .orderQuantityInput {
+          text-align: center;
+          width: 40px;
+          height: 30px;
+          border-radius: 0px;
+          border: 1px solid #b2bec3;
+        }
+        .plusBtn {
+          width: 30px;
+          height: 30px;
+          border-radius: 0px;
+          border: 1px solid #b2bec3;
+          border-left: none;
+          font-size: large;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .tableProductPrice {
+      vertical-align: middle;
+      .tableProductPriceValue {
+        text-align: center;
+      }
+    }
+
+    .tableButton {
+      vertical-align: middle;
+
+      .tableButtonWrap {
+        width: 80px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .orderBtn {
+          background-color: #cf082c;
+          border: none;
+          color: white;
+        }
+
+        .deleteBtn {
+          border: 1px solid black;
+          background-color: white;
+        }
+
+        button {
+          margin-bottom: 10px;
+          width: 80px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}

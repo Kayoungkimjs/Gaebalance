@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+.shopContainer {
+  padding: 0 55px;
+  margin-bottom: 800px;
+  box-sizing: border-box;
+
+  .shopTitle {
+    position: relative;
+    margin-bottom: 28px;
+    font-weight: bold;
+    font-size: 43px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .categoryList {
+    li {
+      width: 31.3%;
+      float: left;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .shopMen {
+        margin-top: 25px;
+        text-align: center;
+
+        .men {
+          font-size: 20px;
+          font-weight: 700;
+          border-bottom: 2px solid #141414;
+          cursor: pointer;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+
+      &:nth-child(3n-1) {
+        margin: 0 3%;
+      }
+    }
+  }
+}

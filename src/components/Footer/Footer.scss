@@ -1,32 +1,40 @@
 * {
   text-decoration: none;
 }
+
 .footer {
   min-width: 1200px;
   background: #232323;
+
   .foot_link {
     height: 130px;
     border-bottom: 1px solid #393939;
+
     ul {
       width: 1200px;
       margin: 0 auto;
+
       li {
         float: left;
         width: 300px;
         padding-top: 50px;
+
         a {
           display: inline-block;
+
           strong {
             display: block;
             margin-bottom: 5px;
-            color: #fff;
             font-size: 20px;
             font-weight: 700;
             line-height: 1;
+            color: #fff;
+
             &:hover {
               color: red;
             }
           }
+
           span {
             color: #d3d3d3;
             font-size: 14px;
@@ -36,33 +44,39 @@
       }
     }
   }
+
   .foot_inner {
     width: 1200px;
     height: 330px;
     margin: 0 auto;
     padding-top: 70px;
     overflow: hidden;
+
     .foot_menu {
       float: left;
       overflow: hidden;
+
       .list {
         float: left;
         margin-right: 80px;
+
         strong {
           display: block;
           padding-bottom: 18px;
-          color: #fff;
           font-size: 14px;
           line-height: 1;
+          color: #fff;
         }
+
         ul {
           li {
             a {
               display: block;
               margin-top: 15px;
-              color: #bdbdbd;
               font-size: 14px;
               line-height: 1;
+              color: #bdbdbd;
+
               &:hover {
                 color: red;
               }
@@ -75,19 +89,22 @@
   .foot_info {
     float: right;
     width: 600px;
+
     p {
       margin-top: 10px;
-      color: white;
       font-size: 15px;
       font-weight: 300;
       line-height: 24px;
       letter-spacing: -0.05em;
       white-space: nowrap;
+      color: white;
+
       span {
-        color: white;
-        font-weight: 700;
         padding-right: 18px;
+        font-weight: 700;
+        color: white;
       }
+
       h2 {
         font-size: 16px;
         font-weight: 500;
