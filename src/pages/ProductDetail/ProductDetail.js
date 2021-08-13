@@ -131,10 +131,6 @@ class ProductDetail extends React.Component {
 
   quantitySet = (setName, id) => {
     const { selected, productInfoList, totalPrice } = this.state;
-    let newPrice = 0;
-
-    console.log('누른 버튼' + setName);
-    console.log('글 번호' + id);
 
     const newSelected = [...this.state.selected];
 
@@ -145,15 +141,21 @@ class ProductDetail extends React.Component {
           item.quantity = item.quantity - 1;
       }
     });
+
+    this.setState({
+      selected: newSelected,
+    });
+
+    let newPrice = 0;
+
+    console.log('누른 버튼' + setName);
+    console.log('글 번호' + id);
+
     selected.map(item => {
       newPrice += item.quantity * productInfoList.price;
     });
     this.setState({
       totalPrice: newPrice,
-    });
-
-    this.setState({
-      selected: newSelected,
     });
   };
 

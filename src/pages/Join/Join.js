@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import Checkbox from '../Checkbox/Checkbox';
+import { API } from '../../config';
 import './Join.scss';
 
 class Join extends React.Component {
@@ -33,6 +34,8 @@ class Join extends React.Component {
       .then(response => {
         console.log(response);
       });
+
+    this.props.history.push('/');
   };
 
   render() {
