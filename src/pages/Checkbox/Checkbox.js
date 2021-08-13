@@ -6,6 +6,7 @@ class Checkbox extends React.Component {
   constructor() {
     super();
     this.state = {
+      colors_id: [],
       categories: [
         { id: 1, value: '빨강' },
         { id: 2, value: '주황' },
@@ -25,13 +26,14 @@ class Checkbox extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange() {
+  handleChange(e) {
     const { checked, value } = this.state;
-
-    this.setState(prevState => ({
-      checkedItems: prevState.checkedItems.set(checked, value),
-    }));
+    this.props.colorSelect(e.target.value);
+    // this.setState(prevState => ({
+    //   checkedItems: prevState.checkedItems.set(checked, value),
+    // }));
   }
+  handleClick = () => {};
 
   handleSubmit(event) {
     event.preventDefault();
@@ -55,6 +57,7 @@ class Checkbox extends React.Component {
                     type="checkbox"
                     value={item.id}
                     onChange={this.handleChange}
+                    // onClick={this.handleClick}
                   />{' '}
                   {item.value}
                 </label>

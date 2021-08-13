@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import Checkbox from '../Checkbox/Checkbox';
+import { API } from '../../config';
 import './Join.scss';
 
 class Join extends React.Component {
@@ -11,8 +12,16 @@ class Join extends React.Component {
       phone_number: '',
       email: '',
       password: '',
+      colors_id: [],
     };
   }
+
+  colorSelect = id => {
+    console.log('color id' + id);
+    this.setState({
+      colors_id: this.state.colors_id.concat(id),
+    });
+  };
 
   handleJoin = () => {
     fetch(`${API.JOIN}`, {
@@ -26,7 +35,7 @@ class Join extends React.Component {
         password: this.state.password,
         address: '서울특별시 강서구 공항호',
         size_id: 1,
-        colors_id: [3, 6, 7],
+        colors_id: this.state.colors_id,
       }),
     })
       .then(response => response.json())
@@ -36,6 +45,7 @@ class Join extends React.Component {
   };
 
   render() {
+    console.log(this.state.colors_id);
     return (
       <main className="con_join">
         <h2>SIGN UP</h2>
@@ -194,7 +204,7 @@ class Join extends React.Component {
               </span>
             </div>
           </div>
-          <Checkbox />
+          <Checkbox colorSelect={this.colorSelect} />
         </div>
 
         <div className="btn">
