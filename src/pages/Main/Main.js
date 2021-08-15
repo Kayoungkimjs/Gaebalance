@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import SlideMenu from './SlideMenu/SlideMenu';
+import { ReactDOM } from 'react';
+import Sslide from './Slide/Sslide';
 import Gbnow from './Gbnow/Gbnow';
 import Allshop from './Allshop/Allshop';
 import './Main.scss';
@@ -9,7 +10,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="mainContainer">
-        <SlideMenu />
+        <Sslide />
         <Gbnow />
         <Allshop />
       </div>
