@@ -3,7 +3,7 @@ import '../ProductDetail/ProductDetail.scss';
 import OrderListBox from './OrderListBox';
 import ProductInfoBox from './ProductInfoBox';
 import SizePicker from './SizePicker';
-// import { API } from 'config.js';
+import { API } from '../../config';
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class ProductDetail extends React.Component {
 
   componentDidMount() {
     console.log('넘어온 id =' + this.props.match.params.id);
-    fetch(`http://10.58.0.115:8000/products/${this.props.match.params.id}`, {
+    fetch(`${API.PRODUCT}/${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(response => response.json())
@@ -65,7 +65,7 @@ class ProductDetail extends React.Component {
     console.log('아이디는?' + productInfoList.id);
 
     console.log('보내기');
-    fetch('http://10.58.0.115:8000/carts', {
+    fetch(`${API.CART}`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -76,6 +76,8 @@ class ProductDetail extends React.Component {
         count: selected[0].quantity,
       }),
     });
+
+    this.props.history.push('/shoppingCart');
   };
 
   imgChange = e => {
@@ -129,10 +131,6 @@ class ProductDetail extends React.Component {
 
   quantitySet = (setName, id) => {
     const { selected, productInfoList, totalPrice } = this.state;
-    let newPrice = 0;
-
-    console.log('누른 버튼' + setName);
-    console.log('글 번호' + id);
 
     const newSelected = [...this.state.selected];
 
@@ -143,15 +141,21 @@ class ProductDetail extends React.Component {
           item.quantity = item.quantity - 1;
       }
     });
+
+    this.setState({
+      selected: newSelected,
+    });
+
+    let newPrice = 0;
+
+    console.log('누른 버튼' + setName);
+    console.log('글 번호' + id);
+
     selected.map(item => {
       newPrice += item.quantity * productInfoList.price;
     });
     this.setState({
       totalPrice: newPrice,
-    });
-
-    this.setState({
-      selected: newSelected,
     });
   };
 
@@ -281,7 +285,9 @@ class ProductDetail extends React.Component {
                 <div className="totalPriceBox">
                   <div className="totalPriceName">합계</div>
                   <div className="totalPrice">
-                    {Math.floor(this.state.totalPrice).toLocaleString('ko-KR')}{' '}
+                    {(
+                      Math.floor(this.state.totalPrice / 1000) * 1000
+                    ).toLocaleString('ko-KR')}{' '}
                     원
                   </div>
                 </div>

@@ -12,7 +12,7 @@ class Login extends React.Component {
   }
   goToMain = () => {
     const { id, pw } = this.state;
-
+    this.props.history.push('/');
     fetch(`${API.LOGIN}`, {
       method: 'POST',
       body: JSON.stringify({ email: id, password: pw }),
@@ -22,11 +22,11 @@ class Login extends React.Component {
         if (response.access_token) {
           console.log(response.access_token);
           localStorage.setItem('token', response.access_token);
-          this.props.history.push('/Nav');
+          this.props.history.push('/');
         } else {
           alert('아이디 / 비밀번호를 다시 입력해주세요');
         }
-        // this.props.history.push('./Main');
+        this.props.history.push('/');
       });
   };
 
@@ -49,6 +49,7 @@ class Login extends React.Component {
                 className="id"
                 id="id"
                 onChange={this.handleidInput}
+                autoComplete="off"
               />
               <input
                 type="password"
@@ -56,6 +57,7 @@ class Login extends React.Component {
                 className="pw"
                 id="pw"
                 onChange={this.handleidInput}
+                autoComplete="off"
               />
 
               <div className="check">

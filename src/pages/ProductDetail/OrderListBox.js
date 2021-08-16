@@ -44,7 +44,10 @@ class OrderListBox extends React.Component {
           </button>
         </div>
         <div className="orderPrice">
-          {Math.floor(this.props.productInfo.price).toLocaleString('ko-KR')}원
+          {(
+            Math.floor(this.props.productInfo.price / 1000) * 1000
+          ).toLocaleString('ko-KR')}
+          원
         </div>
         <div>
           <i

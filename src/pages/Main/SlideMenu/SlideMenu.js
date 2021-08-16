@@ -14,28 +14,8 @@ class SlideMenu extends React.Component {
             <li>
               <Link>
                 <label for="slide03" class="left"></label>
-                <img src="./images/image.png" alt="" />
+                <img src="./images/main.jpg" alt="" />
                 <label for="slide02" class="right"></label>
-              </Link>
-            </li>
-            <li>
-              <Link>
-                <label for="slide01" class="left"></label>
-                <img
-                  src="https://image.nbkorea.com/NBRB_Site/20210802/NB20210802160801303001.jpg"
-                  alt=""
-                />
-                <label for="slide03" class="right"></label>
-              </Link>
-            </li>
-            <li>
-              <Link>
-                <label for="slide02" class="left"></label>
-                <img
-                  src="https://image.nbkorea.com/NBRB_Site/20210730/NB20210730094222030001.jpg"
-                  alt=""
-                />
-                <label for="slide01" class="right"></label>
               </Link>
             </li>
           </ul>

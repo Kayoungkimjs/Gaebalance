@@ -1,95 +1,306 @@
 import React from 'react';
-// import SearchFilterData from './SearchFilterData';
+// import {FILTER} from './SearchFilterData'
 import './SearchFilter.scss';
 
 class SearchFilter extends React.Component {
   render() {
     const { item, color, size, price } = this.props;
-    console.log(item);
     return (
-      <div className="filterWrap">
-        <div className="itemFilter">
-          <button
-            onClick={this.props.handleToggle}
-            type="button"
-            className="toggleBtn"
-            value="item"
-          >
-            ITEM
-          </button>
-          <button
-            onClick={this.props.handleToggle}
-            type="button"
-            className="toggleBtn"
-            value="color"
-          >
-            COLOR
-          </button>
-          <button
-            onClick={this.props.handleToggle}
-            type="button"
-            className="toggleBtn"
-            value="size"
-          >
-            SIZE
-          </button>
-          <button
-            onClick={this.props.handleToggle}
-            type="button"
-            className="toggleBtn"
-            value="price"
-          >
-            PRICE
-          </button>
-          {/* {toggleMenu && toggleIndex === idx && (
-            <filterChoice
-            categorylist = {categories.categories[idx].category}
-            categoryIdx = {categories.categories[idx]}
-            /> */}
+      <>
+        <div className="filterWrap">
+          <div className="itemFilter">
+            <button
+              onClick={this.props.handleToggle}
+              type="button"
+              className="toggleBtn"
+              value="item"
+            >
+              ITEM
+            </button>
+            <button
+              onClick={this.props.handleToggle}
+              type="button"
+              className="toggleBtn"
+              value="color"
+            >
+              COLOR
+            </button>
+            <button
+              onClick={this.props.handleToggle}
+              type="button"
+              className="toggleBtn"
+              value="size"
+            >
+              SIZE
+            </button>
+            <button
+              onClick={this.props.handleToggle}
+              type="button"
+              className="toggleBtn"
+              value="price"
+            >
+              PRICE
+            </button>
+          </div>
+          {item && (
+            <ul className="toggleMenu" value="item">
+              <li>
+                <input
+                  value="item"
+                  name="choices"
+                  type="checkbox"
+                  id="sub-category_1"
+                  onChange={this.props.selectChoice}
+                />
+                긴팔 상의
+              </li>
+              <li>
+                <input
+                  value="item"
+                  name="choices"
+                  type="checkbox"
+                  id="sub-category_2"
+                  onChange={this.props.selectChoice}
+                />
+                반팔 상의
+              </li>
+              <li>
+                <input
+                  value="item"
+                  name="choices"
+                  type="checkbox"
+                  id="sub-category_3"
+                  onChange={this.props.selectChoice}
+                />
+                긴바지
+              </li>
+              <li>
+                <input
+                  value="item"
+                  name="choices"
+                  type="checkbox"
+                  id="sub-category_4"
+                  onChange={this.props.selectChoice}
+                />
+                반바지
+              </li>
+              <li>
+                <input
+                  value="item"
+                  name="choices"
+                  type="checkbox"
+                  id="sub-category_5"
+                  onChange={this.props.selectChoice}
+                />
+                아우터
+              </li>
+              <li>
+                <input
+                  value="item"
+                  name="choices"
+                  type="checkbox"
+                  id="sub-category_6"
+                  onChange={this.props.selectChoice}
+                />
+                비치웨어
+              </li>
+            </ul>
+          )}
+          {color && (
+            <ul className="toggleMenu" value="color">
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_1"
+                  onChange={this.props.selectChoice}
+                />
+                RED
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_2"
+                  onChange={this.props.selectChoice}
+                />
+                ORANGE
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_3"
+                  onChange={this.props.selectChoice}
+                />
+                YELLOW
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_4"
+                  onChange={this.props.selectChoice}
+                />
+                GREEN
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_5"
+                  onChange={this.props.selectChoice}
+                />
+                BLUE
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_6"
+                  onChange={this.props.selectChoice}
+                />
+                NAVY
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_7"
+                  onChange={this.props.selectChoice}
+                />
+                PURPLE
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_8"
+                  onChange={this.props.selectChoice}
+                />
+                BLACK
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_9"
+                  onChange={this.props.selectChoice}
+                />
+                WHITE
+              </li>
+              <li>
+                <input
+                  value="color"
+                  name="choices"
+                  type="checkbox"
+                  id="color_10"
+                  onChange={this.props.selectChoice}
+                />
+                GRAY
+              </li>
+            </ul>
+          )}
+          {size && (
+            <ul className="toggleMenu" value="size">
+              <li>
+                <input
+                  value="size"
+                  name="choices"
+                  type="checkbox"
+                  id="size_1"
+                  onChange={this.props.selectChoice}
+                />
+                S
+              </li>
+              <li>
+                <input
+                  value="size"
+                  name="choices"
+                  type="checkbox"
+                  id="size_2"
+                  onChange={this.props.selectChoice}
+                />
+                M
+              </li>
+              <li>
+                <input
+                  value="size"
+                  name="choices"
+                  type="checkbox"
+                  id="size_3"
+                  onChange={this.props.selectChoice}
+                />
+                L
+              </li>
+            </ul>
+          )}
+          {price && (
+            <ul className="toggleMenu" value="item">
+              <li>
+                <input
+                  value="price"
+                  name="choices"
+                  type="checkbox"
+                  id="price_1"
+                  onChange={this.props.selectChoice}
+                />
+                5만원 미만
+              </li>
+              <li>
+                <input
+                  value="price"
+                  name="choices"
+                  type="checkbox"
+                  id="price_2"
+                  onChange={this.props.selectChoice}
+                />
+                5만원 - 10만원 미만
+              </li>
+              <li>
+                <input
+                  value="price"
+                  name="choices"
+                  type="checkbox"
+                  id="price_3"
+                  onChange={this.props.selectChoice}
+                />
+                10만원 - 15만원 미만
+              </li>
+              <li>
+                <input
+                  value="price"
+                  name="choices"
+                  type="checkbox"
+                  id="price_4"
+                  onChange={this.props.selectChoice}
+                />
+                15만원 - 20만원 미만
+              </li>
+              <li>
+                <input
+                  value="price"
+                  name="choices"
+                  type="checkbox"
+                  id="price_5"
+                  onChange={this.props.selectChoice}
+                />
+                20만원 이상
+              </li>
+            </ul>
+          )}
         </div>
-        {item && (
-          <ul className="toggleMenu" value="item">
-            <li>
-              <input value="item" name="choices" type="checkbox" />
-              상의
-            </li>
-            <li>
-              <input value="item" name="choices" type="checkbox" />
-              하의
-            </li>
-            <li>
-              <input value="item" name="choices" type="checkbox" />
-              아우터
-            </li>
-            <li>
-              <input value="item" name="choices" type="checkbox" />
-              비치웨어
-            </li>
-          </ul>
-        )}
-        {color && (
-          <ul className="toggleMenu" value="color">
-            <li>
-              <input value="color" name="choices" type="checkbox" />
-              red
-            </li>
-            <li>
-              <input value="color" name="choices" type="checkbox" />
-              orange
-            </li>
-            <li>
-              <input value="color" name="choices" type="checkbox" />
-              yellow
-            </li>
-            <li>
-              <input value="color" name="choices" type="checkbox" />
-              green
-            </li>
-          </ul>
-        )}
-      </div>
+      </>
     );
   }
 }
-
 export default SearchFilter;
