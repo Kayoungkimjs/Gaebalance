@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Nav/Category.scss';
 
 class Category extends React.Component {
@@ -13,7 +14,7 @@ class Category extends React.Component {
                 <a href="#">상의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴팔티</a>
@@ -30,7 +31,7 @@ class Category extends React.Component {
                 <a href="#">하의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴바지</a>
@@ -44,7 +45,7 @@ class Category extends React.Component {
                 <a href="#">아우터</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">자켓</a>
@@ -61,7 +62,7 @@ class Category extends React.Component {
                 <a href="#">비치웨어</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                 </ul>
               </li>
@@ -74,7 +75,7 @@ class Category extends React.Component {
                 <a href="#">상의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴팔</a>
@@ -91,7 +92,7 @@ class Category extends React.Component {
                 <a href="#">하의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴바지</a>
@@ -105,7 +106,7 @@ class Category extends React.Component {
                 <a href="#">아우터</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">자켓</a>
@@ -122,7 +123,7 @@ class Category extends React.Component {
                 <a href="#">비치웨어</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                 </ul>
               </li>
@@ -135,7 +136,7 @@ class Category extends React.Component {
                 <a href="#">상의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴팔</a>
@@ -152,7 +153,7 @@ class Category extends React.Component {
                 <a href="#">하의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴바지</a>
@@ -169,7 +170,7 @@ class Category extends React.Component {
                 <a href="#">아우터</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">자켓</a>
@@ -201,7 +202,7 @@ class Category extends React.Component {
                 <a href="#">상의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴팔</a>
@@ -218,7 +219,7 @@ class Category extends React.Component {
                 <a href="#">하의</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">긴바지</a>
@@ -235,7 +236,7 @@ class Category extends React.Component {
                 <a href="#">아우터</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                   <li>
                     <a href="#">자켓</a>
@@ -252,7 +253,7 @@ class Category extends React.Component {
                 <a href="#">비치웨어</a>
                 <ul>
                   <li>
-                    <a href="#">전체보기</a>
+                    <Link to={`/productLists`}>전체보기</Link>
                   </li>
                 </ul>
               </li>

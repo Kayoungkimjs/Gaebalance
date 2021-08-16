@@ -30,7 +30,7 @@ class Nav extends React.Component {
         <div className="gnb">
           <div className="inner">
             <h1 className="logo">
-              <a href="#">Gaebalance</a>
+              <Link to="/">Gaebalance</Link>
             </h1>
             <Category />
             <div className="customer">
@@ -49,9 +49,9 @@ class Nav extends React.Component {
                 </Link>
               </div>
               <div className="cart">
-                <a href="#" className="shop">
+                <Link to={`/shoppingCart`} href="#" className="shop">
                   <span className="blind">장바구니</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

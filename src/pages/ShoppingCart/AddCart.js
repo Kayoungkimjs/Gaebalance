@@ -3,6 +3,11 @@ import './AddCart.scss';
 import { Route, Link } from 'react-router-dom';
 
 class AddCart extends React.Component {
+  sendCartId = e => {
+    console.log(e.target.id);
+    this.props.deleteCart(e.target.id);
+  };
+
   render() {
     return (
       <tbody className="tableBody">
@@ -51,7 +56,13 @@ class AddCart extends React.Component {
           <td className="tableButton">
             <div className="tableButtonWrap">
               <button className="orderBtn">주문하기</button>
-              <button className="deleteBtn">삭제하기</button>
+              <button
+                id={this.props.cartInfo.cart_id}
+                className="deleteBtn"
+                onClick={this.sendCartId}
+              >
+                삭제하기
+              </button>
             </div>
           </td>
         </tr>

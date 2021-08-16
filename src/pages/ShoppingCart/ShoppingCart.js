@@ -1,7 +1,7 @@
 import React from 'react';
 import '../ShoppingCart/ShoppingCart.scss';
 import AddCart from './AddCart';
-
+import { API } from '../../config';
 class ShoppingCart extends React.Component {
   constructor(props) {
     super(props);
@@ -11,14 +11,24 @@ class ShoppingCart extends React.Component {
       totalPrice: 0,
     };
   }
-  componentDidMount() {
-    console.log('전');
-    localStorage.setItem(
-      'access_token',
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.Aw-lnT18gQg9ATCZOzWJWfsnUV0LmZVy9qlSRYaTrH0'
-    );
 
-    fetch('http://10.58.3.37:8000/carts', {
+  deleteCart = id => {
+    console.log('여기까지 옴');
+
+    this.deleteCartList(id);
+  };
+
+  deleteCartList = id => {
+    fetch(`${API.CART}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
+    });
+  };
+
+  cartRefush = () => {
+    fetch(`${API.CART}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('access_token'),
@@ -31,9 +41,43 @@ class ShoppingCart extends React.Component {
           cartList: this.state.cartList.concat(response.response.cart),
           totalPrice: response.response.total_price,
         });
-        console.log(this.state.cartList);
       });
-    console.log('후');
+  };
+
+  componentDidUpdate(prevState, prevProps) {
+    if (prevState.cartList !== undefined) {
+      if (prevState.cartList !== [] || prevState.cartList.length > 0) {
+        console.log(prevState.cartList);
+        console.log(this.state.cartList);
+        console.log('업데이트111');
+
+        console.log('업데이트222');
+        this.cartRefush();
+      }
+    }
+  }
+
+  componentDidMount() {
+    console.log('전');
+    localStorage.setItem(
+      'access_token',
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.Aw-lnT18gQg9ATCZOzWJWfsnUV0LmZVy9qlSRYaTrH0'
+    );
+
+    fetch(`${API.CART}`, {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('access_token'),
+      },
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response.response);
+        this.setState({
+          cartList: this.state.cartList.concat(response.response.cart),
+          totalPrice: response.response.total_price,
+        });
+      });
   }
   render() {
     console.log(this.state);
@@ -69,7 +113,13 @@ class ShoppingCart extends React.Component {
                     </tr>
                   </thead>
                   {this.state.cartList.map((item, index) => {
-                    return <AddCart key={index} cartInfo={item} />;
+                    return (
+                      <AddCart
+                        deleteCart={this.deleteCart}
+                        key={index}
+                        cartInfo={item}
+                      />
+                    );
                   })}
                 </table>
 
@@ -87,17 +137,27 @@ class ShoppingCart extends React.Component {
                 <div className="priceInfo">
                   <div className="priceBox">
                     <div>주문금액</div>
-                    <div>금액</div>
+                    <div>
+                      {(
+                        Math.floor(this.state.totalPrice / 1000) * 1000
+                      ).toLocaleString('ko-KR')}{' '}
+                      원
+                    </div>
                   </div>
                   <div className="delvPriceBox">
                     <div>배송료</div>
-                    <div>금액</div>
+                    <div>0 원</div>
                   </div>
                 </div>
                 <div className="totalPriceBox">
                   <div>
                     <p className="orderPrice">결제 예정 금액</p>
-                    <p className="delvPrice">주문금액 + 배송료</p>
+                    <p className="delvPrice">
+                      {(
+                        Math.floor(this.state.totalPrice / 1000) * 1000
+                      ).toLocaleString('ko-KR')}{' '}
+                      원 + 0 원
+                    </p>
                     <p className="totalPrice">
                       {(
                         Math.floor(this.state.totalPrice / 1000) * 1000
