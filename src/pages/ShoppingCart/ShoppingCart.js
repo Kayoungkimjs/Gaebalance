@@ -18,7 +18,7 @@ class ShoppingCart extends React.Component {
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.Aw-lnT18gQg9ATCZOzWJWfsnUV0LmZVy9qlSRYaTrH0'
     );
 
-    fetch('http://10.58.0.115:8000/carts', {
+    fetch('http://10.58.3.37:8000/carts', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('access_token'),

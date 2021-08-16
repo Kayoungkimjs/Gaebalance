@@ -19,7 +19,7 @@ class ProductDetail extends React.Component {
 
   componentDidMount() {
     console.log('넘어온 id =' + this.props.match.params.id);
-    fetch(`http://10.58.0.115:8000/products/${this.props.match.params.id}`, {
+    fetch(`http://10.58.3.37:8000/products/${this.props.match.params.id}`, {
       method: 'GET',
     })
       .then(response => response.json())
@@ -65,7 +65,7 @@ class ProductDetail extends React.Component {
     console.log('아이디는?' + productInfoList.id);
 
     console.log('보내기');
-    fetch('http://10.58.0.115:8000/carts', {
+    fetch('http://10.58.3.37:8000/carts', {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('access_token'),

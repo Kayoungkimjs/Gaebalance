@@ -12,10 +12,11 @@ class AddCart extends React.Component {
               <img src={this.props.cartInfo.image} alt="" />
             </div>
             <div className="tableProductInfo">
-              <a className="cartInfoName" href="">
-                {this.props.cartInfo.name}
-              </a>
-
+              <Link to="/productDetail/" className="link">
+                <a className="cartInfoName" href="">
+                  {this.props.cartInfo.name}
+                </a>
+              </Link>
               <p className="sizeColor">
                 {this.props.cartInfo.color} / {this.props.cartInfo.size}
               </p>
