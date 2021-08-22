@@ -10,12 +10,13 @@ body {
 
 .slider {
   position: relative;
-  width: 1000px;
+  width: 1500px;
   margin: 0 auto;
   height: 500px;
   overflow: hidden;
   white-space: nowrap;
   margin-bottom: 50px;
+  margin-top: 110px;
 
   .slider-wrapper {
     position: relative;
@@ -98,14 +99,14 @@ body {
   position: absolute;
   top: 50%;
   right: 25px;
-  z-index: 999;
+  z-index: 10;
 }
 
 .left-arrow {
   position: absolute;
   top: 50%;
   left: 25px;
-  z-index: 999;
+  z-index: 10;
 }
 
 .dots-container {
