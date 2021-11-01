@@ -1,4 +1,4 @@
-# Gaebalance 
+# Gaebalance 🛍
 ### E-commercial 온라인 쇼핑몰 사이트
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/83155239/139663487-de7354f6-3877-4b10-9bbe-7a79ed9cdf6a.gif)
 ---
